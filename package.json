@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-rest-api",
+  "version": "1.0.0",
+  "description": "A simple rest API in Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "lint": "npx eslint",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhDSouza/nodejs-rest-api.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Rest",
+    "API"
+  ],
+  "author": "Daniel Henrique de Souza",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/dhDSouza/nodejs-rest-api/issues"
+  },
+  "homepage": "https://github.com/dhDSouza/nodejs-rest-api#readme",
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "eslint": "^8.44.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3"
+  }
+}
