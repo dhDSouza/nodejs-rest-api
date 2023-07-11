@@ -2,29 +2,62 @@ const UserRepository = require('../repositories/user-repository')
 const bcrypt = require('bcrypt')
 
 async function findAllUsers() {
-	return await UserRepository.getUsers()
+	try{
+		return await UserRepository.getUsers()
+	} catch(err) {
+		console.log(err.message)
+		return err.message
+	}
 }
 
 async function findUserById(id) {
-	return await UserRepository.getUserById(id)
+	try {
+		return await UserRepository.getUserById(id)
+	} catch(err) {
+		console.log(err.message)
+		return err.message
+	}
 }
 
 async function findUserByEmail(email) {
-	return await UserRepository.getUserByEmail(email)
+	try {
+		return await UserRepository.getUserByEmail(email)
+	} catch(err) {
+		console.log(err.message)
+		return err.message
+	}
 }
 
 async function createUser(nome, email, senha) {
-	const hashedPassword = await bcrypt.hash(senha, 10)
-	return await UserRepository.createUser(nome, email, hashedPassword)
+	try {
+		const hashedPassword = await bcrypt.hash(senha, 10)
+		return await UserRepository.createUser(nome, email, hashedPassword)
+	} catch(err) {
+		console.log(err.message)
+		return err.message
+	}
 }
 
 async function updateUser(id, nome, email, senha) {
-	const hashedPassword = await bcrypt.hash(senha, 10)
-	return await UserRepository.updateUser(id, nome, email, hashedPassword)
+	try {
+		if(senha) {
+			const hashedPassword = await bcrypt.hash(senha, 10)
+			return await UserRepository.updateUser(id, nome, email, hashedPassword)
+		}
+		return await UserRepository.updateUser(id, nome, email)
+	} catch(err) {
+		console.log(err.message)
+		return err.message
+	}
 }
 
 async function deleteUser(id) {
-	return await UserRepository.deleteUser(id)
+	try {
+		return await UserRepository.deleteUser(id)
+	} catch(err) {
+		console.log(err.message)
+		return err.message
+	}
 }
 
 module.exports = {
