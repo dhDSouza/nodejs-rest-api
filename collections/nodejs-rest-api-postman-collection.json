@@ -55,11 +55,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/:email",
+							"raw": "{{base_url}}/email/:email",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
+								"email",
 								":email"
 							],
 							"variable": [

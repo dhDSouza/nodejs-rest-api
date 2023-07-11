@@ -12,7 +12,7 @@ A URL base para todos os endpoints é `localhost:3000`.
 |-----------------------|--------|------------------------------------|
 | `/`                   | GET    | Obter todos os usuários            |
 | `/:id`                | GET    | Obter usuário por ID               |
-| `/:email`             | GET    | Obter usuário por email            |
+| `/email/:email`       | GET    | Obter usuário por email            |
 | `/`                   | POST   | Criar usuário                      |
 | `/:id`                | PUT    | Atualizar usuário por ID           |
 | `/:id`                | DELETE | Excluir usuário por ID             |
@@ -32,7 +32,7 @@ A URL base para todos os endpoints é `localhost:3000`.
 ### Obter usuário por email
 
 - **Método**: GET
-- **Endpoint**: `/:email`
+- **Endpoint**: `/email/:email`
 - **Parâmetros de URL**:
   - `email`: Email do usuário
 
